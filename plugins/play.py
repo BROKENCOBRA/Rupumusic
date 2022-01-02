@@ -259,6 +259,10 @@ async def play(_, message: Message):
                         text="❣️ Rᴜᴘᴜ Oᴡɴᴇʀ", text=f"Fɪɴᴅɪɴɢ ʜᴇʀ🧐🥺"
                     ),
                     InlineKeyboardButton(text="Sᴜᴘᴘᴏʀᴛ🎵", url=f"https://t.me/shivamdemon"),
+                ],[
+                        InlineKeyboardButton(
+                            text="🚫Cʟᴏsᴇ", callback_data="cls"
+                        ),
                 ]
             ]
         )
@@ -298,6 +302,10 @@ async def play(_, message: Message):
                         text="❣️ Rᴜᴘᴜ Oᴡɴᴇʀ", text=f"Fɪɴᴅɪɴɢ ʜᴇʀ🧐🥺"
                     ),
                     InlineKeyboardButton(text="Sᴜᴘᴘᴏʀᴛ🎵", url=f"https://t.me/shivamdemon"),
+                ],[
+                        InlineKeyboardButton(
+                            text="✌️ Gʀᴏᴜᴘ", url=f"https://t.me/Love_live_laughk"
+                        ),
                 ]
             ]
         )
@@ -363,6 +371,10 @@ async def play(_, message: Message):
                         text="❣️ Rᴜᴘᴜ Oᴡɴᴇʀ", text=f"Fɪɴᴅɪɴɢ ʜᴇʀ🧐🥺"
                     ),
                     InlineKeyboardButton(text="Sᴜᴘᴘᴏʀᴛ🎵", url=f"https://t.me/shivamdemon"),
+                ],[
+                        InlineKeyboardButton(
+                            text="✌️ Gʀᴏᴜᴘ", url=f"https://t.me/Love_live_laughk"
+                        ),
                 ]
             ]
         )
