@@ -40,7 +40,7 @@ def cb_admin_check(func: Callable) -> Callable:
         admemes = a.get(cb.message.chat.id)
         if cb.from_user.id in admemes or cb.from_user.id in SUDO_USERS:
             return await func(client, cb)
-        await cb.answer("You ain't allowed!", show_alert=True)
+        await cb.answer("Yᴏᴜ ᴀɪɴ'ᴛ ᴛᴏ ᴘʟᴀʏ!", show_alert=True)
         return
 
     return decorator
@@ -181,7 +181,7 @@ async def play(_, message: Message):
     if message.chat.id in DISABLED_GROUPS:
         await message.reply("**maintainence mode is on, ask admin to disable it!**")
         return
-    lel = await message.reply("🔄 **Processing...**")
+    lel = await message.reply("🔄**Pʟᴀʏɪɴɢ...Aᴜᴅɪᴏ**")
 
     administrators = await get_administrators(message.chat)
     chid = message.chat.id
@@ -189,7 +189,7 @@ async def play(_, message: Message):
     try:
         user = await USER.get_me()
     except:
-        user.first_name = "DeCode_Assistant"
+        user.first_name = "rupu_Assistant"
     usar = user
     wew = usar.id
     try:
@@ -204,7 +204,7 @@ async def play(_, message: Message):
                     invitelink = await _.export_chat_invite_link(chid)
                 except:
                     await lel.edit(
-                        "<b>Add me as admin of yor group first</b>",
+                        "⚠️ **ᴘʀᴏᴍᴏᴛᴇ ᴍᴇ ᴀs ᴀᴅᴍɪɴ ғɪʀsᴛ ⚠️**",
                     )
                     return
 
@@ -212,24 +212,23 @@ async def play(_, message: Message):
                     await USER.join_chat(invitelink)
                     await USER.send_message(
                         message.chat.id,
-                        "Assistant joined this group for playing music in VC",
+                        "**ᴀssɪsᴛᴀɴᴛ ᴊᴏɪɴᴇᴅ 👍🏻 ɴᴏᴡ ᴘʟᴀʏ ʏᴏᴜʀ ᴍᴜsɪᴄ ғʀᴇᴇʟʏ** ❣️",
                     )
                     await lel.edit(
-                        "<b>Assistant joined this chat</b>",
+                        "**ᴀssɪsᴛᴀɴᴛ ᴊᴏɪɴᴇᴅ 👍🏻 ɴᴏᴡ ᴘʟᴀʏ ʏᴏᴜʀ ᴍᴜsɪᴄ ғʀᴇᴇʟʏ** ❣️",
                     )
 
                 except UserAlreadyParticipant:
                     pass
                 except Exception:
-                    await lel.edit(
-                        f"<b>🛑 Flood Wait Error 🛑</b> \n\Hey {user.first_name}, assistant userbot couldn't join your group due to heavy join requests. Make sure userbot is not banned in group and try again later!"
+                    await lel.edit(f"⚠️ **ғʟᴏᴏᴅ ᴡᴀɪᴛ ᴇʀʀᴏʀ ⚠️ ᴄʜᴇᴄᴋ ᴍᴀʏʙᴇ ᴀssɪsᴛᴀɴᴛ ɪs ʙᴀɴɴᴇᴅ ᴏʀ ɴᴏᴛ ᴀᴠᴀɪʟᴀʙʟᴇ ɪɴ ᴛʜɪs ᴄʜᴀᴛ**.!"
                     )
     try:
         await USER.get_chat(chid)
         # lmoa = await client.get_chat_member(chid,wew)
     except:
         await lel.edit(
-            f"<i>Hey {user.first_name}, assistant userbot is not in this chat, ask admin to send /play command for first time to add it.</i>"
+            f"😒 **ᴀssɪsᴛᴀɴᴛ ɴᴏᴛ ᴀᴠᴀɪʟᴀʙʟᴇ ɪɴ ᴛʜɪs ᴄʜᴀᴛ sᴏ sᴇɴᴅ /userbotjoin ᴄᴏᴍᴍᴀɴᴅ ғɪʀsᴛ ᴛᴏ ᴊᴏɪɴ ᴀssɪsᴛᴀɴᴛ ʜᴇʀᴇ**"
         )
         return
 
@@ -243,12 +242,12 @@ async def play(_, message: Message):
     if audio:
         if round(audio.duration / 60) > DURATION_LIMIT:
             raise DurationLimitError(
-                f"❌ Videos longer than {DURATION_LIMIT} minutes aren't allowed to play!"
+                f"🙃 **ʜᴇʏ ʏᴏᴜʀ sᴏɴɢ ᴅᴜʀᴀᴛɪᴏɴ ɪs {DURATION_LIMIT} ᴍɪɴᴜᴛᴇs..Sᴇᴀʀᴄʜ ғᴏʀ sᴍᴀʟʟ ᴍᴜsɪᴄ.** ️🤞!"
             )
 
         file_name = get_file_name(audio)
         title = file_name
-        thumb_name = "https://telegra.ph/file/a7adee6cf365d74734c5d.png"
+        thumb_name = "https://telegra.ph/file/22e0f6fd383b078132fd0.jpg"
         thumbnail = thumb_name
         duration = round(audio.duration / 60)
         views = "Locally added"
@@ -256,8 +255,10 @@ async def play(_, message: Message):
         keyboard = InlineKeyboardMarkup(
             [
                 [
-                    InlineKeyboardButton("🚨 Support", url="t.me/decodesupport"),
-                    InlineKeyboardButton(text="🗑 Close", callback_data="cls")
+                    InlineKeyboardButton(
+                        text="❣️ Rᴜᴘᴜ Oᴡɴᴇʀ", text=f"Fɪɴᴅɪɴɢ ʜᴇʀ🧐🥺"
+                    ),
+                    InlineKeyboardButton(text="Sᴜᴘᴘᴏʀᴛ🎵", url=f"https://t.me/shivamdemon"),
                 ]
             ]
         )
@@ -291,17 +292,19 @@ async def play(_, message: Message):
                 secmul *= 60
 
             keyboard = InlineKeyboardMarkup(
+            [
                 [
-                 [
-                    InlineKeyboardButton("🚨 Support", url="t.me/decodesupport"),
-                    InlineKeyboardButton(text="🗑 Close", callback_data="cls")
-                 ]
+                    InlineKeyboardButton(
+                        text="❣️ Rᴜᴘᴜ Oᴡɴᴇʀ", text=f"Fɪɴᴅɪɴɢ ʜᴇʀ🧐🥺"
+                    ),
+                    InlineKeyboardButton(text="Sᴜᴘᴘᴏʀᴛ🎵", url=f"https://t.me/shivamdemon"),
                 ]
-            )
+            ]
+        )
 
         except Exception as e:
             title = "NaN"
-            thumb_name = "https://telegra.ph/file/a7adee6cf365d74734c5d.png"
+            thumb_name = "https://telegra.ph/file/22e0f6fd383b078132fd0.jpg"
             duration = "NaN"
             views = "NaN"
             keyboard = InlineKeyboardMarkup(
@@ -310,7 +313,8 @@ async def play(_, message: Message):
 
         if (dur / 60) > DURATION_LIMIT:
             await lel.edit(
-                f"❌ Videos longer than {DURATION_LIMIT} minutes aren't allowed to play!"
+                f"🙃 **ʜᴇʏ ʏᴏᴜʀ sᴏɴɢ ᴅᴜʀᴀᴛɪᴏɴ ɪs {DURATION_LIMIT} ᴍɪɴᴜᴛᴇs..sᴇᴀʀᴄʜ ғᴏʀ sᴍᴀʟʟ ᴍᴜsɪᴄ.** ️🤞"
+ !"
             )
             return
         requested_by = message.from_user.first_name
@@ -319,12 +323,12 @@ async def play(_, message: Message):
     else:
         if len(message.command) < 2:
             return await lel.edit(
-                "🧐 **Song not found! Try searching with the correct title\nExample » /play In The End\n\nChannel : @DeCodeMusicBot**"
+                "🙃 **ʜᴇʏ ᴛʏᴘᴇ ᴛʜᴇ sᴏᴍᴇᴛʜɪɴɢ ʀᴇᴀʟ...**"
             )
-        await lel.edit("🔎 **Finding the song...**")
+        await lel.edit("🔎 **ᴄᴏɴɴᴇᴄᴛɪɴɢ...**")
         query = message.text.split(None, 1)[1]
         # print(query)
-        await lel.edit("🎵 **Processing sounds...**")
+        await lel.edit("🔍 **ᴡᴀɪᴛɪɴɢ ᴛᴏ ᴘʟᴀʏ...** ")
         try:
             results = YoutubeSearch(query, max_results=1).to_dict()
             url = f"https://youtube.com{results[0]['url_suffix']}"
@@ -347,7 +351,7 @@ async def play(_, message: Message):
 
         except Exception as e:
             await lel.edit(
-                "❌ Song not found.\n\nTry another song or maybe spell it properly."
+                "⚠️ **sᴏʀʀʏ sᴏɴɢ ɴᴀᴍᴇ ᴡʀᴏɴɢ, ᴛʀʏ ᴡɪᴛʜ ʀɪɢʜᴛ ɴᴀᴍᴇ** 😾😒."
             )
             print(str(e))
             return
@@ -355,15 +359,17 @@ async def play(_, message: Message):
         keyboard = InlineKeyboardMarkup(
             [
                 [
-                    InlineKeyboardButton("🚨 Support", url="t.me/decodesupport"),
-                    InlineKeyboardButton(text="🗑 Close", callback_data="cls")
+                    InlineKeyboardButton(
+                        text="❣️ Rᴜᴘᴜ Oᴡɴᴇʀ", text=f"Fɪɴᴅɪɴɢ ʜᴇʀ🧐🥺"
+                    ),
+                    InlineKeyboardButton(text="Sᴜᴘᴘᴏʀᴛ🎵", url=f"https://t.me/shivamdemon"),
                 ]
             ]
         )
 
         if (dur / 60) > DURATION_LIMIT:
             await lel.edit(
-                f"❌ Videos longer than {DURATION_LIMIT} minutes aren't allowed to play!"
+                f"🙃 **ʜᴇʏ ʏᴏᴜʀ sᴏɴɢ ᴅᴜʀᴀᴛɪᴏɴ ɪs {DURATION_LIMIT} ᴍɪɴᴜᴛᴇs..sᴇᴀʀᴄʜ ғᴏʀ sᴍᴀʟʟ ᴍᴜsɪᴄ** ️🤞!"
             )
             return
         requested_by = message.from_user.first_name
@@ -375,12 +381,7 @@ async def play(_, message: Message):
         position = await queues.put(chat_id, file=file_path)
         await message.reply_photo(
             photo="final.png",
-            caption="**🎸 Song:** {}\n\n**⏰ Time:** {} min\n**👤 Requested By:** {}\n\n**#⃣ Queued at:** {}".format(
-                title,
-                duration,
-                message.from_user.mention(),
-                position,
-            ),
+            caption=f"🏷 **ꜱᴏɴɢ ᴀᴅᴅᴇᴅ ᴛᴏ Qᴜᴇᴜᴇ »** `{position}`\n\n🏷 **ɴᴀᴍᴇ:** [{title[:80]}]({url})\n⏱ **ᴅᴜʀᴀᴛɪᴏɴ:** `{duration}`\n🎧 **ᴀᴅᴅᴇᴅ ʙʏ:** {message.from_user.mention}",
             reply_markup=keyboard,
         )
     else:
@@ -396,8 +397,8 @@ async def play(_, message: Message):
         await message.reply_photo(
             photo="final.png",
             reply_markup=keyboard,
-            caption="**🎵 Song:** {}\n**🕒 Duration:** {} min\n**👤 Added By:** {}\n\n**▶️ Now Playing at `{}`...**".format(
-                title, duration, message.from_user.mention(), message.chat.title
+            caption=f"☑️ **ɴᴀᴍᴇ:** [{title[:80]}]({url})\n⏱ **ᴅᴜʀᴀᴛɪᴏɴ:** `{duration}`\n💡 **ꜱᴛᴀᴛᴜꜱ:** `ᴘʟᴀʏɪɴɢ`\n"
+            + f"🎧 **ᴀᴅᴅᴇᴅ ʙʏ:** {message.from_user.mention}"
             ),
         )
 
