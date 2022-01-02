@@ -24,19 +24,18 @@ async def addchannel(client, message):
     try:
         user = await USER.get_me()
     except:
-        user.first_name = "@DeCode_Assistant"
+        user.first_name = "@ruppu_assistant"
 
     try:
         await USER.join_chat(invitelink)
     except UserAlreadyParticipant:
         await message.reply_text(
-            f"<b>{user.first_name} Allready join this Group</b>",
+            f"<b>{user.first_name} Aʟʀᴇᴀᴅʏ ʜᴇʀᴇ ʙᴀʙᴇs ..❤️</b>",
         )
     except Exception as e:
         print(e)
         await message.reply_text(
-            f"<b>Flood Wait Error\n{user.first_name} can't join your group due to many join requests for userbot! Make sure the user is not banned in the group."
-            "\n\nOr manually add the Assistant bot to your Group and try again.</b>",
+            f"😒 **ᴀssɪsᴛᴀɴᴛ ɴᴏᴛ ᴀᴠᴀɪʟᴀʙʟᴇ ɪɴ ᴛʜɪs ᴄʜᴀᴛ sᴏ sᴇɴᴅ /userbotjoin ᴄᴏᴍᴍᴀɴᴅ ғɪʀsᴛ ᴛᴏ ᴊᴏɪɴ ᴀssɪsᴛᴀɴᴛ ʜᴇʀᴇ**",
         )
         return
     await message.reply_text(
@@ -51,7 +50,7 @@ async def rem(USER, message):
         await USER.leave_chat(message.chat.id)
     except:
         await message.reply_text(
-            "<b>Users cannot leave your group! Probably waiting for floodwaits.\n\nOr manually remove me from your Group</b>"
+            "⚠️ **ғʟᴏᴏᴅ ᴡᴀɪᴛ ᴇʀʀᴏʀ ⚠️ ᴄʜᴇᴄᴋ ᴍᴀʏʙᴇ ᴀssɪsᴛᴀɴᴛ ɪs ʙᴀɴɴᴇᴅ ᴏʀ ɴᴏᴛ ᴀᴠᴀɪʟᴀʙʟᴇ ɪɴ ᴛʜɪs ᴄʜᴀᴛ**."
         )
 
         return
@@ -70,15 +69,15 @@ async def bye(client, message):
             await USER.leave_chat(dialog.chat.id)
             left += 1
             await lol.edit(
-                f"Assistant leaving... Left: {left} chats. Failed: {failed} chats."
+                f"ᴀssɪsᴛᴀɴᴛ ʟᴇᴀᴠɪɴɢ... Lᴇғᴛ: {left} chats. Fᴀɪʟᴇᴅ: {failed} chats."
             )
         except:
             failed += 1
             await lol.edit(
-                f"Assistant leaving... Left: {left} chats. Failed: {failed} chats."
+                f"ᴀssɪsᴛᴀɴᴛ ʟᴇᴀᴠɪɴɢ... Lᴇғᴛ: {left} chats. Fᴀɪʟᴇᴅ: {failed} chats."
             )
         await asyncio.sleep(0.7)
     await client.send_message(
-        message.chat.id, f"Left {left} chats. Failed {failed} chats."
+        message.chat.id, f"Lᴇғᴛ {left} chats. Fᴀɪʟᴇᴅ{failed} chats."
     )
 
