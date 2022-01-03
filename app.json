@@ -60,9 +60,28 @@
       "description": "Owner userid",
       "required": true
     },
-    "ASSISTANT_USERNAME": {
-      "description": "USERNAME ASSISTANT",
-      "required": true
-    }     
-  }
+        "GROUP_SUPPORT": {
+            "description": "if you have group, fill the group username here without @",
+            "required": false,
+            "value": "DeCodeSupport"
+        }
+    },
+    "addons": [],
+    "buildpacks": [
+        {
+            "url": "heroku/python"
+        },
+        {
+            "url": "heroku/nodejs"
+        },
+        {
+            "url": "https://github.com/jonathanong/heroku-buildpack-ffmpeg-latest.git"
+        }
+    ],
+    "formation": {
+        "worker": {
+            "quantity": 1,
+            "size": "free"
+        }
+    }
 }
